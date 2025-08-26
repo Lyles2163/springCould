@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.example</groupId>
-    <artifactId>a</artifactId>
+    <artifactId>b</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>b</name>
     <description>b</description>
@@ -12,11 +12,9 @@
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>3.0.2</spring-boot.version>
-        <!-- 定义 Spring Cloud 版本 -->
-        <spring-cloud.version>2022.0.0</spring-cloud.version> <!-- 注意：2023.0.3 对应 Spring Boot 3.1.x，对于 3.0.2 应使用 2022.0.x -->
-        <!-- 定义 Spring Cloud Alibaba 版本 -->
-        <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version> <!-- 注意：2023.0.1.0 对应 Spring Boot 3.1.x，对于 3.0.2 应使用 2022.0.0.0 -->
+        <spring-boot.version>3.3.4</spring-boot.version>
+        <spring-cloud.version>2023.0.3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2023.0.1.2</spring-cloud-alibaba.version>
     </properties>
 
     <!-- 顶层依赖，这些会被实际引入到项目中 -->
@@ -46,16 +44,15 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-
-
-
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.1.5</version>
         </dependency>
-
-
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
 
 
 

@@ -1,5 +1,6 @@
 server:
   port: 8011
+
 spring:
   application:
     name: BService
@@ -8,5 +9,6 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
       config:
+        server-addr: 127.0.0.1:8848
         import-check:
-          enabled: false  # 正确的配置路径
+          enabled: false

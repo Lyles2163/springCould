@@ -1,0 +1,41 @@
+server:
+  port: 8013
+
+spring:
+  application:
+    name: GatewayService
+  cloud:
+
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        import-check:
+          enabled: false
+        import:
+          - optional:nacos:gateway-service.yml
+    gateway:
+      routes:
+        - id: A_route
+          uri: lb://AService
+          predicates:
+            - Path=/testA/**
+
+        - id: B_route
+          uri: lb://BService
+          predicates:
+            - Path=/testB/**
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # ???? "gateway", "routes"
+  endpoint:
+    gateway:
+      enabled: true
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty: DEBUG
+    org.springframework.web.reactive: DEBUG
