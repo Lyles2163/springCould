@@ -1,0 +1,12 @@
+server:
+  port: 8011
+spring:
+  application:
+    name: BService
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        import-check:
+          enabled: false  # 正确的配置路径
